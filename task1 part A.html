@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+	<title>Task 1 Part A</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+	text-align: center;
+	background: #ff7ae0;
+}
+
+img{
+	text-align: center;
+}
+#wish{
+	text-align: center;
+	font-family: 'Zen Old Mincho', serif;
+            width: 1000px;
+            height: 800px;
+            margin: auto auto;
+            background: #ffffff; 
+}
+	</style>
+	<h1>Links</h1>
+	<ul>
+		<li><a href="task1%20part%20A.html">Task 1 Part A</a></li>
+		<li><a href="">Task 1 Part B</a></li>
+		<li><a href="lean-slider.html">Task 2</a></li>
+		<li><a href="api%20map.html">Task 3 Part A</a></li>
+		<li><a href="task%203%20part%20B.html">Task 3 Part B</a></li>
+	</ul>
+<div class="wish">
+		<h1>My Wish-list</h1>
+		<div class="wishlist">
+			<input type="text">
+			<button>Add wish</button>
+		</div>
+
+		<ul class="NotCompleted">
+			<h3>Not Completed</h3>
+		</ul>
+
+		<ul class="Completed">
+			<h3>Completed</h3>
+			<script type="text/javascript">
+				const input = document.querySelector('input');
+		const btn = document.querySelector('.wishlist > button');
+
+		btn.addEventListener('click', addList);
+		input.addEventListener('keyup', (e)=>{
+			(e.keyCode === 13 ? addList(e) : null);
+		})
+
+		function addList(e){
+			const notCompleted = document.querySelector('.NotCompleted');
+			const Completed = document.querySelector('.Completed');
+
+			const newLi = document.createElement('li');
+			const checkBtn = document.createElement('button');
+			const delBtn = document.createElement('button');
+			const editBtn=document.createElement('button')
+
+			checkBtn.innerHTML='done';
+			listBtn1.innerHTML='edit';
+			delBtn.innerHTML = 'delete';
+
+
+			
+			delBtn.addEventListener('click', function(){
+				const parent = this.parentNode;
+				parent.remove();
+			});
+			checkBtn.addEventListener('click', function(){
+				const parent = this.parentNode;
+				parent.remove();
+				Completed.appendChild(parent);
+				checkBtn.style.display = 'none';
+			});
+			listBtn1.addEventListener('click',function(){
+				const parent = this.parentNode;
+				items[index].innerHTML = inputText.value;
+                 refreshArray();
+			})
+			if(input.value !==''){
+				newLi.textContent = input.value;
+				input.value = '';
+				notCompleted.appendChild(newLi);
+				newLi.appendChild(checkBtn);
+				newLi.appendChild(delBtn);
+				newLi.appendChild(listBtn1);
+			}
+		}
+		listItem.appendChild(listText);
+        listText.textContent=myItem;
+        listItem.appendChild(listBtn);
+        listBtn.textContent='Delete';
+        listItem.appendChild(listBtn1);
+                listBtn1.textContent = 'Edit';
+
+
+          listBtn1.onclick=function(e){
+            list.removeChild(listItem);
+            const editwish=prompt("Write more correctly wish...");
+            listItem.appendChild(listText);
+            listText.textContent=editwish;
+            listItem.appendChild(listBtn);
+            listItem.appendChild(listBtn1);
+            list.appendChild(listItem);
+          }
+        
+        input.focus();
+
+			</script>
+</body>
+</html>
